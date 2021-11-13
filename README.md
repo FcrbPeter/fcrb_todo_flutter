@@ -1,5 +1,7 @@
 # fcrb_todo_flutter
 
+[![Deploy changes](https://github.com/FcrbPeter/fcrb_todo_flutter/actions/workflows/main.yml/badge.svg)](https://github.com/FcrbPeter/fcrb_todo_flutter/actions/workflows/main.yml)
+
 A new Flutter project.
 
 ## Getting Started
