@@ -1,4 +1,7 @@
+import 'package:fcrb_todo_flutter/app/component/todo_row.dart';
 import 'package:flutter/material.dart';
+
+import 'todo_popup.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -38,16 +41,7 @@ class _HomePageState extends State<HomePage> {
                         icon: Icon(Icons.add),
                         onPressed: () => showDialog(
                           context: context,
-                          builder: (BuildContext context) => AlertDialog(
-                            title: Text("New to do item"),
-                            content: Text("test"),
-                            actions: [
-                              TextButton(
-                                onPressed: () => Navigator.pop(context, true),
-                                child: Text("Close"),
-                              ),
-                            ],
-                          ),
+                          builder: (BuildContext context) => ToDoPopup(),
                         ),
                       )
                     ],
@@ -59,29 +53,7 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 420,
                   child: ListView(
-                    children: [
-                      ListTile(
-                        leading: Icon(Icons.account_circle),
-                        title: Text("Job 1"),
-                        onTap: () => print("asd"),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.account_circle),
-                        title: Text("Job 1"),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.account_circle),
-                        title: Text("Job 1"),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.account_circle),
-                        title: Text("Job 1"),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.account_circle),
-                        title: Text("Job 1"),
-                      ),
-                    ],
+                    children: [ToDoRow(), ToDoRow()],
                   ),
                 )
               ],
