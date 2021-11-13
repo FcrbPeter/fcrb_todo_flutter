@@ -10,75 +10,85 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints.tightFor(width: 520),
-          child: Card(
-            elevation: 3,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "ToDos",
-                          style: Theme.of(context).textTheme.headline4,
+          child: ConstrainedBox(
+        constraints: const BoxConstraints.tightFor(width: 520),
+        child: Card(
+          elevation: 3,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "ToDos",
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
+                      IconButton(
+                        splashRadius: 30,
+                        iconSize: 32,
+                        icon: Icon(Icons.add),
+                        onPressed: () => showDialog(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: Text("New to do item"),
+                            content: Text("test"),
+                            actions: [
+                              TextButton(
+                                onPressed: () => Navigator.pop(context, true),
+                                child: Text("Close"),
+                              ),
+                            ],
+                          ),
                         ),
-                        IconButton(
-                          splashRadius: 30,
-                          iconSize: 32,
-                          icon: Icon(Icons.add),
-                          onPressed: () => print("asd"),
-                        )
-                      ],
-                    ),
+                      )
+                    ],
                   ),
-                  const Divider(
-                    thickness: 2,
+                ),
+                const Divider(
+                  thickness: 2,
+                ),
+                SizedBox(
+                  height: 420,
+                  child: ListView(
+                    children: [
+                      ListTile(
+                        leading: Icon(Icons.account_circle),
+                        title: Text("Job 1"),
+                        onTap: () => print("asd"),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.account_circle),
+                        title: Text("Job 1"),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.account_circle),
+                        title: Text("Job 1"),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.account_circle),
+                        title: Text("Job 1"),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.account_circle),
+                        title: Text("Job 1"),
+                      ),
+                    ],
                   ),
-                  SizedBox(
-                    height: 420,
-                    child: ListView(
-                      children: [
-                        ListTile(
-                          leading: Icon(Icons.account_circle),
-                          title: Text("Job 1"),
-                          onTap: () => print("asd"),
-                        ),
-                        ListTile(
-                          leading: Icon(Icons.account_circle),
-                          title: Text("Job 1"),
-                        ),
-                        ListTile(
-                          leading: Icon(Icons.account_circle),
-                          title: Text("Job 1"),
-                        ),
-                        ListTile(
-                          leading: Icon(Icons.account_circle),
-                          title: Text("Job 1"),
-                        ),
-                        ListTile(
-                          leading: Icon(Icons.account_circle),
-                          title: Text("Job 1"),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
+                )
+              ],
             ),
           ),
-        )
-      ),
+        ),
+      )),
     );
   }
 }
