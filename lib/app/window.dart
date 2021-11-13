@@ -9,7 +9,7 @@ class AppWindow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Fcrb ToDos',
       theme: appTheme,
       home: const HomePage(),
     );

@@ -15,8 +15,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: SizedBox(
-          width: 520,
+        child: ConstrainedBox(
+          constraints: const BoxConstraints.tightFor(width: 520),
           child: Card(
             elevation: 3,
             child: Padding(
@@ -42,11 +42,11 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  Divider(
+                  const Divider(
                     thickness: 2,
                   ),
                   SizedBox(
-                    height: 600,
+                    height: 420,
                     child: ListView(
                       children: [
                         ListTile(
