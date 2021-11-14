@@ -1,4 +1,5 @@
 import 'package:fcrb_todo_flutter/app/component/todo_row.dart';
+import 'package:fcrb_todo_flutter/app/component/user_icon.dart';
 import 'package:flutter/material.dart';
 
 import 'todo_popup.dart';
@@ -16,6 +17,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            UserIcon(),
+          ],
+        ),
+      ),
       body: Center(
           child: ConstrainedBox(
         constraints: const BoxConstraints.tightFor(width: 520),

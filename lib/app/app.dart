@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'component/firebase_init.dart';
 import 'window.dart';
 
 class MyApp extends StatelessWidget {
@@ -8,6 +9,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AppWindow();
+    return FirebaseInitialize(
+      loadingBuilder: (context, _) => AppWindow.loading(),
+      completeBuilder: (context, _) => AppWindow(),
+      errorBuilder: (context, _) => AppWindow.error(),
+    );
   }
 }

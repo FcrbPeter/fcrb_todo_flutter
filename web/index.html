@@ -26,10 +26,26 @@
   <meta name="apple-mobile-web-app-title" content="fcrb_todo_flutter">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-  <title>fcrb_todo_flutter</title>
+  <title>Fcrb ToDo</title>
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAyh6VObbWax3YQWWA3fLSImbmhrclYQs4",
+      authDomain: "fcrb-todo-flutter.firebaseapp.com",
+      projectId: "fcrb-todo-flutter",
+      storageBucket: "fcrb-todo-flutter.appspot.com",
+      messagingSenderId: "147775350019",
+      appId: "1:147775350019:web:5ebe4e70f38a328ebc7536"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
